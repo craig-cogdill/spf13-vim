@@ -65,8 +65,3 @@ vnoremap <S-Space> <Leader>c<Space>
 
 " Search for visually selected text
 vnoremap // y/<C-R>"<CR>
-
-" Try to fix the arrow keys issue without disabling NeoComplete
-if &term[:4] == "xterm" || &term[:5] == 'screen' || &term[:3] == 'rxvt'
-   inoremap <silent> <C-[>OC <RIGHT>
-endif
