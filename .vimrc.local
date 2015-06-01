@@ -2,8 +2,8 @@
 set softtabstop=3 shiftwidth=3 tabstop=3 expandtab
 
 " Faster tab switching
-nnoremap <S-j> gt
-nnoremap <S-f> gT
+noremap <S-j> gt
+noremap <S-f> gT
 
 " Moving a tab over to the left
 function TabLeft()
