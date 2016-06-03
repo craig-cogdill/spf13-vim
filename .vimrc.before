@@ -28,7 +28,7 @@
     "   let g:spf13_no_views = 1
 
     " Leader keys
-    "   let g:spf13_leader='\'
+    "   let g:spf13_leader=','
     "   let g:spf13_localleader='_'
 
     " Disable easier moving in tabs and windows
@@ -49,7 +49,7 @@
     "   let g:spf13_no_neosnippet_expand = 1
 
     " Disable whitespace stripping
-    "   let g:spf13_keep_trailing_whitespace = 1
+       let g:spf13_keep_trailing_whitespace = 1
 
     " Enable powerline symbols
     "   let g:airline_powerline_fonts = 1

@@ -1,0 +1,70 @@
+" Tab control for LogRhythm code
+set softtabstop=3 shiftwidth=3 tabstop=3 expandtab
+
+" Faster tab switching
+noremap <S-j> gt
+noremap <S-f> gT
+
+" Moving a tab over to the left
+function TabLeft()
+   let tab_number = tabpagenr() - 1
+   if tab_number == 0
+      execute "tabm" tabpagenr('$') - 1
+   else
+      execute "tabm" tab_number - 1
+   endif
+endfunction
+
+" Moving a tab over to the right
+function TabRight()
+   let tab_number = tabpagenr() - 1
+   let last_tab_number = tabpagenr('$') - 1
+  if tab_number == last_tab_number
+      execute "tabm" 0
+   else
+      execute "tabm" tab_number + 1
+   endif
+endfunction
+
+" Shortcuts to move the tabs over faster
+inoremap <silent> <C-S-Left> <C-r>=TabLeft()<CR>
+inoremap <silent> <C-S-Right> <C-r>=TabRight()<CR>
+
+noremap <silent> <C-S-Left> :call TabLeft()<CR>
+noremap <silent> <C-S-Right> :call TabRight()<CR>
+
+" Disable stripping of whitespace
+let g:spf13_keep_trailing_whitespace = 1
+
+""""""""""""""" NERDCOMMENTER """""""""""""""""""
+" Add the filetype plugin for NerdCommenter
+filetype plugin on
+
+" Change <Leader> key for NerdCommenter
+let mapleader=","
+set timeout timeoutlen=1500
+"""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Get CNTL-Space and SHIFT-Space to work again
+"  It is disabled by iterm, but I have modified
+"  my iterm settings to get it to work
+map ✠ <S-Space>
+map! ✠ <S-Space>
+vmap ✠ <S-Space>
+xnoremap ✠ <S-Space>
+
+map ✡ <C-Space>
+map! ✡ <C-Space>
+vmap ✡ <C-Space>
+xnoremap ✡ <C-Space>
+
+" Change control space to toggle comments
+map <silent> <C-Space> <Leader>c<Space>
+inoremap <C-Space> <Leader>c<Space>
+vnoremap <S-Space> <Leader>c<Space>
+
+" Search for visually selected text
+vnoremap // y/<C-R>"<CR>
+
+" Trying to fix neocomplete dropdown error
+iunmap <ESC>
